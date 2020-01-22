@@ -1,0 +1,210 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Andrasz Polzer">
+    <title>Andrasz Polzer</title>
+
+    <!-- jQuery and bootstrap js/css -->
+    <script src="{% static 'js/jquery-3.4.1.js' %}"></script>
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for template -->
+    <link href="{% static 'index/style.css' %}" rel="stylesheet">
+  </head>
+  <body>
+
+        <!-- Lager modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+      <div class="modal-dialog modal-xl">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Modal Header</h4>
+          </div>
+          <div class="modal-body">
+            <img src="{% static 'index/images/Lageransicht.jpg' %}" alt="Lageransicht" class="img-fluid">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+        <!-- Auftraege modal -->
+    <div id="myModal2" class="modal fade" role="dialog">
+      <div class="modal-dialog modal-xl">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Modal Header</h4>
+          </div>
+          <div class="modal-body">
+            <img src="{% static 'index/images/Vorgänge.jpg' %}" alt="Lageransicht" class="img-fluid">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+        <!-- MP modal -->
+    <div id="myModal3" class="modal fade" role="dialog">
+      <div class="modal-dialog modal-xl">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Modal Header</h4>
+          </div>
+          <div class="modal-body">
+            <img src="{% static 'index/images/Maschinenplanung.jpg' %}" alt="Lageransicht" class="img-fluid">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="{% url 'index:index' %}">Andrasz Polzer</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    </nav>
+    <!-- sidebar -->
+    <div class="container-fluid">
+      <div class="row">
+        <!-- navbar left -->
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+          <div class="sidebar-sticky" id="#navbarHeader">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link active" href="#">
+                  <span data-feather="home"></span>
+                  Projekte <span>(<-)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'index:about' %}">
+                  <span data-feather="file"></span>
+                  Über mich
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <!-- main page -->
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+          <!-- jumbotron -->
+          <section class="jumbotron text-center">
+            <div class="container">
+              <h1>
+                Projekt Crux
+              </h1>
+              <a type="button" class="btn btn-md btn-outline-secondary" href="https://github.com/Py10t/Crux">
+                <i class="fa fa-github"> GitHub</i>
+              </a>
+              <p class="lead text-muted">Ein Warenwirtschaftsprogramm, das für eine kleine bis mittelgroße Produktionsfirma geeignet ist.<br>Es beinhaltet die folgenden Funktionen:
+                <ul class="text-muted">
+                   <li>Artikel- und Kundendatenbank</li>
+                   <li>Betriebswirtschaftliche Vorgänge (z.B. Lieferscheine, Rechnungen, usw.)</li>
+                   <li>Eine einfache Maschinenplanung, automatisch erstellt anhand vorhandener Bestellungen</li>
+                </ul>
+              </p>
+            </div>
+          </section>
+
+          <div class="album py-5 bg-light">
+            <div class="container">
+              <div class="row">
+              <!-- Lagerliste -->
+                <div class="col-md-4">
+                  <div class="card mb-4 shadow-sm">
+                    <img src="{% static 'index/images/Lageransicht.jpg' %}" alt="Lageransicht" class="img-thumbnail" data-toggle="modal" data-target="#myModal">
+                    <div class="card-body">
+                      <p class="card-text">Tabellarische Liste aller Kunden (gespeichert in einer SQLite DB)</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#myModal">View</button>
+                          <a type="button" class="btn btn-sm btn-outline-secondary" href="{% static 'index/images/Lageransicht.jpg' %}" download="">
+                            <i class="fa fa-download"></i>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <!-- Vorgaenge -->
+                <div class="col-md-4">
+                  <div class="card mb-4 shadow-sm">
+                    <img src="{% static 'index/images/Vorgänge.jpg' %}" alt="Vorgänge" class="img-thumbnail">
+                    <div class="card-body">
+                      <p class="card-text">Einfache Übersicht über die betriebswirtschaftlichen Vorgänge und beispielhaft eine daraus erzeugte Rechnung</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#myModal2">View</button>
+                          <a type="button" class="btn btn-sm btn-outline-secondary" href="{% static 'index/images/Vorgänge.jpg' %}" download="">
+                            <i class="fa fa-download"></i>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <!-- MP -->
+                <div class="col-md-4">
+                  <div class="card mb-4 shadow-sm">
+                    <img src="{% static 'index/images/Maschinenplanung.jpg' %}" alt="MP" class="img-thumbnail">
+                    <div class="card-body">
+                      <p class="card-text">Eine exemplarische Einteilung der Produktionsaufträge auf eine (in diesem Fall, Spritzguss-) Maschine</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#myModal3">View</button>
+                          <a type="button" class="btn btn-sm btn-outline-secondary" href="{% static 'index/images/Maschinenplanung.jpg' %}" download="">
+                            <i class="fa fa-download"></i>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+<script>
+
+</script>
+
+</body>
+</html>

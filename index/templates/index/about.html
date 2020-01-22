@@ -1,0 +1,79 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Andrasz Polzer">
+    <title>Andrasz Polzer</title>
+
+    <!-- Bootstrap core CSS -->
+<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <!-- Custom styles for template -->
+    <link href="{% static 'index/style.css' %}" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="{% url 'index:index' %}">Andrasz Polzer</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    </nav>
+    <!-- sidebar -->
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+          <div class="sidebar-sticky" id="#navbarHeader">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'index:index' %}">
+                  <span data-feather="home"></span>
+                  Projekte <span class="sr-only"></span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="about.html">
+                  Über mich <span>(<-)</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <!-- main page -->
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+          <section class="jumbotron text-center">
+            <div class="container">
+              <h1>Über mich</h1>
+              <p class="lead text-muted">Ein paar Einzelheiten zu meiner Person
+              </p>
+            </div>
+          </section>
+          <div class="container-fluid">
+            <div class="row justify-content-center">
+              <p class="col-md-4" align="center" style="font-family:monospace; font-size: large;">
+                Guten Tag sehr geehrter Leser,<br><br>
+                mein Name ist Andrasz Polzer und ich studiere Angewandte Informatik.
+                Meine Hauptinteresse gilt der Programmierung, aber ich beschäftige mich auch mit der Herstellung von Kunststoffen
+                und deren Recycling. Ich bin weltoffener Mensch, immer auf der Suche nach neuen Herausforderungen und
+                versuche mich so gut es geht (wenn der Tag nur mehr Stunden hätte ....) auf dem Laufenden zu halten was neue
+                Technologien anbelangt. Eine weitere Leiderschaft sind auch die Videospiele, insbesondere für den PC.
+                Damit verbunden habe ich mir auch in Eigenregie einige Grundlagen der Modellierung von Figuren,
+                Objekten und des allgemeinen Leveldesigns beigebracht und mich mit der Anwendung von Scripts auf selbige befasst.
+                <br>
+                <br>
+                Einen schönen Tag wünscht euch
+                <br>
+                Andrasz Polzer
+              </p>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+<script>
+
+</script>
+</body>
+</html>
