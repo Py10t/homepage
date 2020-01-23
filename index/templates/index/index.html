@@ -35,7 +35,7 @@
   </head>
   <body>
 
-        <!-- Lager modal -->
+    <!-- Lager modal -->
     <div id="myModal" class="modal fade" role="dialog">
       <div class="modal-dialog modal-xl">
         <!-- Modal content-->
@@ -53,7 +53,7 @@
       </div>
     </div>
 
-        <!-- Auftraege modal -->
+    <!-- Auftraege modal -->
     <div id="myModal2" class="modal fade" role="dialog">
       <div class="modal-dialog modal-xl">
         <!-- Modal content-->
@@ -71,16 +71,39 @@
       </div>
     </div>
 
-        <!-- MP modal -->
+    <!-- Rechnung modal -->
     <div id="myModal3" class="modal fade" role="dialog">
       <div class="modal-dialog modal-xl">
         <!-- Modal content-->
         <div class="modal-content">
           <div class="modal-header">
+<<<<<<< HEAD
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Rechnung</h4>
+          </div>
+          <div class="modal-body">
+            <img src="{% static 'index/images/Rechnung.jpg' %}" alt="Rechnung" class="img-fluid">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MP modal -->
+    <div id="myModal4" class="modal fade" role="dialog">
+      <div class="modal-dialog modal-xl">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+=======
+>>>>>>> ad49801f473ae56e9a0a78d0750fdc4bff010d80
             <h4 class="modal-title">Maschinenplanung</h4>
           </div>
           <div class="modal-body">
-            <img src="{% static 'index/images/Maschinenplanung.jpg' %}" alt="Lageransicht" class="img-fluid">
+            <img src="{% static 'index/images/Maschinenplanung.jpg' %}" alt="Maschinenplanung" class="img-fluid">
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -125,28 +148,30 @@
               <h1>
                 Projekt Crux
               </h1>
-              <a type="button" class="btn btn-md btn-outline-secondary" href="https://github.com/Py10t/Crux">
+              <a type="button" class="btn btn-md btn-outline-secondary" href="https://github.com/Py10t/Crux" target="_blank" rel="noopener">
                 <i class="fa fa-github"> GitHub</i>
               </a>
               <p class="lead text-muted">Ein Warenwirtschaftsprogramm, das für eine kleine bis mittelgroße Produktionsfirma geeignet ist.<br>Es beinhaltet die folgenden Funktionen:
                 <ul class="text-muted">
-                   <li>Artikel- und Kundendatenbank</li>
-                   <li>Betriebswirtschaftliche Vorgänge (z.B. Lieferscheine, Rechnungen, usw.)</li>
-                   <li>Eine einfache Maschinenplanung, automatisch erstellt anhand vorhandener Bestellungen</li>
+                  <li>Artikel- und Kundendatenbank</li>
+                  <li>Betriebswirtschaftliche Vorgänge (z.B. Bestellungen, Lieferscheine, Rechnungen, usw.)</li>
+                  <li>Eine einfache Maschinenplanung, automatisch erstellt anhand vorhandener Bestellungen</li><br>
+                  <li>Verwendetes Framework: Django</li>
+                  <li>Verwendete Sprachen: Python, JavaScript, HTML (CSS), SQL</li>
                 </ul>
               </p>
             </div>
           </section>
-
+          <!-- Cards der main page -->
           <div class="album py-5 bg-light">
             <div class="container">
               <div class="row">
-              <!-- Lagerliste -->
+                <!-- Lagerliste -->
                 <div class="col-md-4">
                   <div class="card mb-4 shadow-sm">
                     <img src="{% static 'index/images/Lageransicht.jpg' %}" alt="Lageransicht" class="img-thumbnail" data-toggle="modal" data-target="#myModal">
                     <div class="card-body">
-                      <p class="card-text">Tabellarische Liste aller Kunden (gespeichert in einer SQLite DB)</p>
+                      <p class="card-text">Tabellarische Liste aller Kunden (in SQLite DB, aber flexibel austauschbar)</p>
                       <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
                           <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#myModal">View</button>
@@ -158,7 +183,7 @@
                     </div>
                   </div>
                 </div>
-              <!-- Vorgaenge -->
+                <!-- Vorgaenge -->
                 <div class="col-md-4">
                   <div class="card mb-4 shadow-sm">
                     <img src="{% static 'index/images/Vorgänge.jpg' %}" alt="Vorgänge" class="img-thumbnail" data-toggle="modal" data-target="#myModal2">
@@ -175,15 +200,36 @@
                     </div>
                   </div>
                 </div>
-              <!-- MP -->
+                <!-- Rechnung -->
                 <div class="col-md-4">
                   <div class="card mb-4 shadow-sm">
+<<<<<<< HEAD
+                    <img src="{% static 'index/images/Rechnung.jpg' %}" alt="Rechnung" class="img-thumbnail" data-toggle="modal" data-target="#myModal3">
+=======
                     <img src="{% static 'index/images/Maschinenplanung.jpg' %}" alt="MP" class="img-thumbnail" data-toggle="modal" data-target="#myModal3">
+>>>>>>> ad49801f473ae56e9a0a78d0750fdc4bff010d80
+                    <div class="card-body">
+                      <p class="card-text">Aus einem Lieferschein erzeugte Rechnung</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#myModal3">View</button>
+                          <a type="button" class="btn btn-sm btn-outline-secondary" href="{% static 'index/images/Rechnung.jpg' %}" download="">
+                            <i class="fa fa-download"></i>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- MP -->
+                <div class="col-md-4">
+                  <div class="card mb-4 shadow-sm">
+                    <img src="{% static 'index/images/Maschinenplanung.jpg' %}" alt="MP" class="img-thumbnail" data-toggle="modal" data-target="#myModal4">
                     <div class="card-body">
                       <p class="card-text">Eine exemplarische Einteilung der Produktionsaufträge auf eine (in diesem Fall, Spritzguss-) Maschine</p>
                       <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
-                          <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#myModal3">View</button>
+                          <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#myModal4">View</button>
                           <a type="button" class="btn btn-sm btn-outline-secondary" href="{% static 'index/images/Maschinenplanung.jpg' %}" download="">
                             <i class="fa fa-download"></i>
                           </a>
