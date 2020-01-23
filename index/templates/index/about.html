@@ -28,13 +28,17 @@
             <ul class="nav flex-column">
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'index:index' %}">
-                  <span data-feather="home"></span>
-                  Projekte <span class="sr-only"></span>
+                  Projekte
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="about.html">
+                <a class="nav-link active" href="{% url 'index:about' %}">
                   Über mich <span>(<-)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="{% url 'index:contact' %}">
+                  Kontakt
                 </a>
               </li>
             </ul>
