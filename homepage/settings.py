@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os
 import django_heroku
+from pathlib import Path
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -21,8 +22,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'z8_m!!w0h)w$ib6cfig%x0_u4(d5!pof0!4=b5^yye%(c6v0v)'
+data_folder = Path("homepage/misc/")
 
+file_to_open = data_folder / "secret_key.txt"
+
+with open(file_to_open) as f:
+    SECRET_KEY = f.read().strip()
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -124,4 +129,17 @@ STATIC_URL = '/static/'
 # Activate Django-Heroku.
 django_heroku.settings(locals())
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'mail.gmx.net'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'andrasz_the_polzer@gmx.de'
+# EMAIL_HOST_PASSWORD = 'your account’s password'
+data_folder_pass = Path("homepage/misc/")
+
+file_to_open_pass = data_folder / "gmail_pass.txt"
+
+with open(file_to_open_pass) as f:
+    EMAIL_HOST_PASSWORD = f.read().strip()
