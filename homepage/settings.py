@@ -136,10 +136,10 @@ EMAIL_HOST = 'mail.gmx.net'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'andrasz_the_polzer@gmx.de'
-# EMAIL_HOST_PASSWORD = 'your account’s password'
-data_folder_pass = Path("homepage/misc/")
-
-file_to_open_pass = data_folder / "mail_pass.txt"
-
-with open(file_to_open_pass) as f:
-    EMAIL_HOST_PASSWORD = f.read().strip()
+EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']
+# data_folder_pass = Path("homepage/misc/")
+#
+# file_to_open_pass = data_folder / "mail_pass.txt"
+#
+# with open(file_to_open_pass) as f:
+#     EMAIL_HOST_PASSWORD = f.read().strip()
