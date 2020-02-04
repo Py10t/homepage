@@ -139,7 +139,7 @@ EMAIL_HOST_USER = 'andrasz_the_polzer@gmx.de'
 # EMAIL_HOST_PASSWORD = 'your account’s password'
 data_folder_pass = Path("homepage/misc/")
 
-file_to_open_pass = data_folder / "gmail_pass.txt"
+file_to_open_pass = data_folder / "mail_pass.txt"
 
 with open(file_to_open_pass) as f:
     EMAIL_HOST_PASSWORD = f.read().strip()
